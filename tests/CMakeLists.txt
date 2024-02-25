@@ -9,14 +9,15 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  image_test
+  unit_tests
   tests/image_test.cpp
+  tests/geometry_test.cpp
 )
 target_link_libraries(
-  image_test
+  unit_tests
   raytracing
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(image_test)
+gtest_discover_tests(unit_tests)
