@@ -12,6 +12,7 @@ add_executable(
   unit_tests
   tests/image_test.cpp
   tests/geometry_test.cpp
+  tests/ray_test.cpp
 )
 target_link_libraries(
   unit_tests

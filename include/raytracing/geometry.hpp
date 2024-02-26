@@ -54,6 +54,11 @@ public:
 };
 
 template <typename T>
+inline bool operator==(const Vector3<T> &lhs, const Vector3<T> &rhs) {
+  return (lhs.x() == rhs.x() && lhs.y() == rhs.y() && lhs.z() == rhs.z());
+}
+
+template <typename T>
 inline std::ostream &operator<<(std::ostream &out, const Vector3<T> &v) {
   return out << v.x() << ' ' << v.y() << ' ' << v.z();
 }
@@ -99,7 +104,7 @@ Vector3<T> cross(const Vector3<T> &lhs, const Vector3<T> &rhs) {
 
 using Vector3F = Vector3<float>;
 using Vector3D = Vector3<double>;
-using Point3 = Vector3D;
+template <typename T> using Point3 = Vector3<T>;
 
 } // namespace RT
 
